@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "serve out"
+    "start": "serve out",
+    "pages:dev": "npm run build && wrangler pages dev dist --compatibility-date=2024-05-03",
+    "pages:deploy": "npm run build && wrangler pages deploy dist"
   },
   "dependencies": {
     "next": "latest",
@@ -11,10 +13,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240502.0",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "serve": "^14.2.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "wrangler": "^3.53.1"
   }
 }
